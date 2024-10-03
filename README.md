@@ -11,11 +11,10 @@
 - [Contributing](#contributing)
 - [License](#license)
 
----
 
 ## Project Overview
 
----
+
 
 This project demonstrates my data engineering skills through the development of an Extract, Transform, Load (ETL) pipeline. The goal of this project was to automate the process of scraping data from the **Khai** and **Kairo** website via their API, transforming that data into a usable format, and loading it into a PostgreSQL database for further analysis.
 
@@ -23,7 +22,7 @@ This project demonstrates my data engineering skills through the development of 
 
 ## Technologies Used
 
----
+
 
 - **Apache Airflow**: For orchestrating the ETL workflow and managing task dependencies.
 - **PostgreSQL**: As the database to store the processed data.
@@ -35,7 +34,6 @@ This project demonstrates my data engineering skills through the development of 
 
 ## Project Structure
 
----
 
 ```plaintext
 ETL/
@@ -47,41 +45,33 @@ ETL/
 │   └── load.py          # Script for loading data into PostgreSQL
 ├── docker-compose.yml    # Docker Compose file for setting up services
 └── Dockerfile           # Dockerfile for building a custom Airflow image
-
-
+```
 
 ## **Data Flow**
 
----
-
 The ETL pipeline follows these steps:
 
-Extract: Data is extracted from the Khai and Kairo websites using their APIs.
-Transform: The extracted data is processed and transformed to clean and normalize it for analysis.
-Load: Transformed data is loaded into the PostgreSQL database for storage and querying.
+1. Extract: Data is extracted from the Khai and Kairo websites using their APIs.
+2. Transform: The extracted data is processed and transformed to clean and normalize it for analysis.
+3. Load: Transformed data is loaded into the PostgreSQL database for storage and querying.
 
 
 
 ## **Data Transformation**
 
----
 
 The transformation scripts handle data cleaning, normalization, and enrichment to ensure data quality and usability. Some key transformation steps include:
-Removing duplicates and irrelevant entries.
-Converting data types to align with database schema.
-Calculating new metrics based on existing data.
+• Selecting the relevant columns for the DataFrame
+• Removing duplicates and irrelevant entries.
+• Converting data types to align with database schema.
 
 ## **Web Scraping**
 
----
-
-Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
-Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
-Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
+• Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
+• Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
+• Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
 
 ##**Containerization with Docker**
-
----
 
 All components of the ETL pipeline are containerized using Docker, which allows for easy deployment and scalability.
 A custom Docker image for Apache Airflow is built using the Dockerfile, ensuring that all necessary dependencies are installed and configured.
