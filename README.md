@@ -61,17 +61,17 @@ The ETL pipeline follows these steps:
 
 
 The transformation scripts handle data cleaning, normalization, and enrichment to ensure data quality and usability. Some key transformation steps include:
-• Selecting the relevant columns for the DataFrame
-• Removing duplicates and irrelevant entries.
-• Converting data types to align with database schema.
+- Selecting the relevant columns for the DataFrame
+- Removing duplicates and irrelevant entries.
+- Converting data types to align with database schema.
 
 ## **Web Scraping**
 
-• Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
-• Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
-• Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
+- Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
+- Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
+- Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
 
-##**Containerization with Docker**
+## **Containerization with Docker**
 
 All components of the ETL pipeline are containerized using Docker, which allows for easy deployment and scalability.
 A custom Docker image for Apache Airflow is built using the Dockerfile, ensuring that all necessary dependencies are installed and configured.
