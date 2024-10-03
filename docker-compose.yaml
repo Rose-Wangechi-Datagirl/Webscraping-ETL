@@ -1,0 +1,33 @@
+version: '3.8'  
+
+services:
+  postgres:
+    image: postgres:13  # Uses the official PostgreSQL image
+    environment:  # Setting up database credentials
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: vehicle_data
+    ports:
+      - "5432:5432"  # Exposes PostgreSQL on your machine
+
+  webserver:
+    image: apache/airflow:2.6.0-python3.9
+    environment:  # Configuring Airflow to talk to PostgreSQL
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/vehicle_data
+    depends_on:
+      - postgres  # Webserver should wait for PostgreSQL to be ready
+    ports:
+      - "8081:8080"  # Exposes the Airflow web interface on localhost:8080
+    volumes:
+      - ./dags:/opt/airflow/dags  # Syncs DAG folder on your machine to the container
+      - ./scripts:/opt/airflow/scripts  # Syncs scripts folder on your machine to the container
+
+  scheduler:
+    image: apache/airflow:2.6.0-python3.9
+    environment:
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/vehicle_data
+    depends_on:
+      - postgres
+    volumes:
+      - ./dags:/opt/airflow/dags  # Syncs DAG folder on your machine to the container
+      - ./scripts:/opt/airflow/scripts  # Syncs scripts folder on your machine to the container
