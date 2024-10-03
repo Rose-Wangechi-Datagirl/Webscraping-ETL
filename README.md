@@ -8,8 +8,7 @@
 - [Data Flow](#data-flow)
 - [Data Transformation](#data-transformation)
 - [Web Scraping](#web-scraping)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 
 ## Project Overview
