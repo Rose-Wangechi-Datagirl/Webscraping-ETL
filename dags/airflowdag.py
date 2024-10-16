@@ -16,7 +16,7 @@ dag = DAG(
     'car_data_etl_pipeline',
     default_args=default_args,
     description='ETL pipeline to load web scrapped car data into PostgreSQL',
-    schedule_interval='@daily',  # or adjust as per your schedule
+    schedule_interval='@monthly',  # runs every month or adjust as per your schedule
 )
 
 # Task 1: Extract Data
