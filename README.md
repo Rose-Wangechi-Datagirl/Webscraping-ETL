@@ -57,7 +57,11 @@ The ETL pipeline follows these steps:
 2. Transform: The extracted data is processed and transformed to clean and normalize it for analysis.
 3. Load: Transformed data is loaded into the PostgreSQL database for storage and querying.
 
+## **Web Scraping**
 
+- Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
+- Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
+- Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
 
 ## **Data Transformation**
 
@@ -67,11 +71,6 @@ The transformation scripts handle data cleaning, normalization, and enrichment t
 - Removing duplicates and irrelevant entries.
 - Converting data types to align with database schema.
 
-## **Web Scraping**
-
-- Source Websites: This project utilizes APIs from the Khai and Kairo websites to scrape relevant data.
-- Data Extraction: The extract.py script makes API calls to retrieve data, processes the JSON responses, and prepares it for transformation.
-- Error Handling: The extraction process includes error handling to manage API response failures or changes in the API structure.
 
 ## **Containerization with Docker**
 
