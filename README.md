@@ -18,6 +18,9 @@
 This project demonstrates my data engineering skills through the development of an Extract, Transform, Load (ETL) pipeline. The goal of this project was to automate the process of scraping data from the **Khai** and **Kairo** website via their API, transforming that data into a usable format, and loading it into a PostgreSQL database for further analysis.
 
 
+## System Architecture
+
+Arc
 
 ## Technologies Used
 
