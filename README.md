@@ -1,4 +1,4 @@
-# ETL Data Engineering Project
+# Webscraping Khai and Karo website, Automated ETL pipeline
 
 ## Table of Contents
 - [Project Overview](#project-overview)
