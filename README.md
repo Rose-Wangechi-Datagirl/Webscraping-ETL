@@ -20,7 +20,7 @@ This project demonstrates my data engineering skills through the development of 
 
 ## System Architecture
 
-Arc
+![Architecture Diagram](https://github.com/Rose-Wangechi-Datagirl/Webscraping-ETL/blob/main/ETL.png)
 
 ## Technologies Used
 
